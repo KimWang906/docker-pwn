@@ -1,7 +1,6 @@
 FROM ubuntu:20.04
  
 ENV DEBIAN_FRONTEND=noninteractive
-VOLUME ["/volume/path"]
 
 RUN dpkg --add-architecture i386
 RUN apt-get -y update --fix-missing && apt-get -y upgrade
