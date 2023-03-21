@@ -1,7 +1,8 @@
 FROM ubuntu:20.04
  
+# 환경설정
 ENV DEBIAN_FRONTEND=noninteractive
-ENV LC_CTYPE=C.UTF-8
+ENV LC_CTYPE=C.UTF-8 
 
 RUN dpkg --add-architecture i386
 RUN apt-get -y update --fix-missing && apt-get -y upgrade
