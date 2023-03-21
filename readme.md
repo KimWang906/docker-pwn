@@ -18,19 +18,23 @@ chmod +x init.sh
 * Docker init
 
 ```sh
-docker build --network host -t pwn_ubuntu-20.04:0.0 `pwd`
+sudo docker build --network host -t pwn_ubuntu-20.04:0.0 `pwd`
 ```
 
 * Docker run
 
 ```sh
-docker run -v $(pwd)/pwn:/home/system-hacking --net host -i -t pwn_ubuntu-20.04:0.0
+sudo docker run -v $(pwd)/pwn:/home/system-hacking --name pwn_ubuntu --security-opt seccomp=unconfined --net host -i -t pwn_ubuntu-20.04:0.0
+```
+
+```sh
+docker start pwn_ubuntu
 ```
 
 * Docker start
 
 ```sh
-docker exec -it pwn_ubuntu-20.04:0.0 /bin/bash
+docker exec -it pwn_ubuntu /bin/bash
 ```
 
 * Container 삭제
