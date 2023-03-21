@@ -1,2 +1,3 @@
-/pwn/*
+/pwn/dump/*
+/pwn/a.out
 /.vscode/
